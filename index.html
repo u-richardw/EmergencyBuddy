@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Information Hub</title>
+  <!-- Google Font for a professional look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* Hero Header */
+    .hero-header {
+      background: linear-gradient(135deg, #d9534f 0%, #b52b27 100%);
+      padding: 40px 20px;
+      text-align: center;
+      color: #fff;
+      border-bottom-left-radius: 50% 5%;
+      border-bottom-right-radius: 50% 5%;
+    }
+    .hero-header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .hero-header p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: -30px auto 20px auto; /* Pull up the container slightly into the hero area */
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Emergency Contacts Card */
+    .emergency-contacts {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .emergency-contacts h2 {
+      color: #d9534f;
+      margin-bottom: 10px;
+    }
+    .emergency-contacts p {
+      margin: 5px 0;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .section h2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0275d8;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      margin-bottom: 5px;
+    }
+    .section h2:hover {
+      background-color: #01447e;
+    }
+
+    /* Expandable Content */
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      padding: 0 15px;
+      margin-bottom: 10px;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .content.open {
+      padding: 15px;
+      max-height: 800px; /* Large enough to accommodate content */
+    }
+    .content h3 {
+      color: #d9534f;
+      margin-bottom: 5px;
+      font-size: 1.05rem;
+    }
+    .content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    /* Affiliate Banner */
+    .banner {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .banner h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .banner img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+      margin-top: 20px;
+    }
+  </style>
+  <script>
+    function toggleContent(id) {
+      const elem = document.getElementById(id);
+      // Toggle 'open' class
+      if (elem.classList.contains('open')) {
+        elem.classList.remove('open');
+      } else {
+        elem.classList.add('open');
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Hero Header -->
+  <div class="hero-header">
+    <h1>Emergency Information Hub</h1>
+    <p>Quickly access essential information and resources for various emergencies.</p>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    
+    <!-- Emergency Contacts -->
+    <div class="emergency-contacts">
+      <h2>Emergency Contacts</h2>
+      <p><strong>Police, Fire Dept, & Ambulance:</strong> 911</p>
+      <p><strong>Poison Control:</strong> 1-800-222-1222</p>
+      <p><strong>Disaster Relief (FEMA):</strong> 1-800-621-3362</p>
+    </div>
+
+    <!-- Natural Disasters Section -->
+    <div class="section">
+      <h2 onclick="toggleContent('naturalDisasters')">Natural Disasters <span>▼</span></h2>
+      <div class="content" id="naturalDisasters">
+        <h3>Hurricanes</h3>
+        <p>
+          Secure your property and prepare an emergency kit with water, non-perishable food, medications, and important documents in a waterproof container. Monitor updates from the National Hurricane Center and heed evacuation orders.
+        </p>
+        <h3>Earthquakes</h3>
+        <p>
+          During an earthquake, <strong>Drop, Cover, and Hold On</strong>. After the shaking stops, check for injuries and structural damage. Stay alert for aftershocks and follow local evacuation guidelines.
+        </p>
+        <h3>Floods</h3>
+        <p>
+          When flood warnings are issued, move to higher ground immediately. Avoid driving through floodwaters and listen to local emergency broadcasts for evacuation instructions.
+        </p>
+        <h3>Wildfires</h3>
+        <p>
+          Stay updated with local air quality reports and evacuation orders. Evacuate promptly if advised. Wear protective clothing, a mask, and have a fire extinguisher handy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Medical Emergencies Section -->
+    <div class="section">
+      <h2 onclick="toggleContent('medicalEmergencies')">Medical Emergencies <span>▼</span></h2>
+      <div class="content" id="medicalEmergencies">
+        <h3>Bleeding</h3>
+        <p>
+          Apply direct pressure with a clean cloth or bandage and elevate the wound. If the bleeding is severe or does not stop, seek emergency medical assistance immediately.
+        </p>
+        <h3>Choking</h3>
+        <p>
+          If the person cannot breathe, perform the Heimlich maneuver. Stand behind them, wrap your arms around their waist, and give quick upward thrusts. Call 911 if the situation worsens.
+        </p>
+        <h3>Heart Attack</h3>
+        <p>
+          Call 911 immediately. Help the person sit down and remain calm. If they are conscious and not allergic to aspirin, have them chew a standard dose while awaiting emergency services.
+        </p>
+        <h3>General Body Pains & Injuries</h3>
+        <p>
+          For minor injuries or body aches, rest and apply ice to reduce swelling. If pain is severe, persistent, or accompanied by other symptoms, consult a medical professional immediately.
+        </p>
+      </div>
+    </div>
+
+    <!-- Safety Tips Section -->
+    <div class="section">
+      <h2 onclick="toggleContent('safetyTips')">Safety Tips <span>▼</span></h2>
+      <div class="content" id="safetyTips">
+        <h3>Emergency Preparedness</h3>
+        <p>
+          Build an emergency kit with essentials such as water, non-perishable food, first aid supplies, flashlights, batteries, and important documents. Regularly update your kit and practice evacuation drills.
+        </p>
+        <h3>Home Safety</h3>
+        <p>
+          Install and test smoke detectors and carbon monoxide alarms frequently. Keep a fire extinguisher accessible and ensure escape routes remain clear.
+        </p>
+        <h3>Workplace Safety</h3>
+        <p>
+          Familiarize yourself with emergency exits and assembly points at your workplace. Participate in fire drills and safety training. Keep emergency contact numbers readily available.
+        </p>
+      </div>
+    </div>
+
+    <!-- Community Resources Section -->
+    <div class="section">
+      <h2 onclick="toggleContent('communityResources')">Community Resources <span>▼</span></h2>
+      <div class="content" id="communityResources">
+        <h3>Local Grants & Safety Programs</h3>
+        <p>
+          Check with local government and community organizations for grants and programs designed to improve emergency preparedness. Visit your city or county website for details.
+        </p>
+        <h3>Emergency Response Contacts</h3>
+        <p>
+          Keep an updated list of contacts for Police, Fire Department, Ambulance, Poison Control, and Disaster Relief. Save these numbers on your phone and maintain a printed copy at home.
+        </p>
+      </div>
+    </div>
+
+    <!-- Affiliate Banner for Emergency Kits -->
+    <div class="banner">
+      <h2>Emergency Kits & Products</h2>
+      <a href="https://www.amazon.com/s?k=first+aid+kit" target="_blank">
+        <img alt="Emergency Kit Banner">
+      </a>
+        
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2025 Emergency Information Hub. All rights reserved.</p>
+      
+    </div>
+  </div>
+
+</body>
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "c91f3009-fb15-4d76-bd07-4bda445088e3", // The ID of this integration.
+    region: "us-south", // The region your integration is hosted in.
+    serviceInstanceID: "b1191e21-35aa-42e3-834e-2b7b695812c4", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+</html>
